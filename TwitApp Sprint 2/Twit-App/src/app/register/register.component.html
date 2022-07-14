@@ -1,0 +1,47 @@
+<div class="py-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card rounded-0">
+                <div class="Card-header">
+                    <h3 class="mb-0">Register</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form">
+                        <div class="col-md-12">
+                            <label class="form-label" for="floatingInput">First Name</label>
+                            <input type="text" class="form-control" id="floatingInput" [(ngModel)]="registerUserData.firstName" placeholder="Please enter First Name">
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label" for="floatingInput">Last Name</label>
+                            <input type="text" class="form-control" id="floatingInput" [(ngModel)]="registerUserData.lastName" placeholder="Please enter Last Name">
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label" for="floatingInput">Email Id</label>
+                            <input type="text" class="form-control" id="floatingInput" [(ngModel)]="registerUserData.email" placeholder="Please enter your EmailId">
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label" for="floatingInput">Login Id</label>
+                            <input type="email" class="form-control" id="floatingInput" [(ngModel)]="registerUserData.loginId" placeholder="Please enter your loginId">
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label" for="floatingPassword">Password</label>
+                            <input type="password" class="form-control" id="floatingPassword" [(ngModel)]="registerUserData.password" placeholder="Password">
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label" for="floatingPassword">Confirm Password</label>
+                            <input type="password" class="form-control" id="floatingPassword" [(ngModel)]="registerUserData.confirmPassword" placeholder="Confirm Password">
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label" for="floatingPassword">Contact Number</label>
+                            <input type="text" class="form-control" id="floatingInput" [(ngModel)]="registerUserData.contactNumber" placeholder="Contact Number">
+                        </div>l
+                        <div class="col-12">
+                            <div class="form-check"></div>
+                            </div>
+                        <button routerLink="/login" class="btn btn-lg btn-primary" (click)="registerUser()" type="submit">Register</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
