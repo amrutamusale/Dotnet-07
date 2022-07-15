@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { AuthService } from './services/auth.service';
+import { TwitterService } from './services/twitter.service';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -26,6 +31,10 @@ export class AppComponent {
   LogOut(){
     this._auth.logoutUser();
   }
-}
+
+getRestItems(): void {
+  
+   }
+  }
 
 
