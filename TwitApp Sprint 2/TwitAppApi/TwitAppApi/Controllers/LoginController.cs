@@ -41,6 +41,7 @@ namespace TwitAppApi.Controllers
             }
             return Ok(token);
         }
+
         [HttpPost]
         [Route("register")]
         public IActionResult Register(RegisterViewModel registerViewModel)

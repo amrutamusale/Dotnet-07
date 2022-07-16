@@ -9,17 +9,19 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
-
-
-
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { TweetComponent } from './tweet/tweet.component';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
-  
+    HomeComponent,
+    DashboardComponent,
+    TweetComponent,
+    AccountComponent,
   ],
   imports: [
     BrowserModule,

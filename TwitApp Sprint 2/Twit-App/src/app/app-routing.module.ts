@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AccountComponent } from './account/account.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { TwitterMentionsComponent } from './twitter-mentions/twitter-mentions.component';
-import { TwitterTimelineComponent } from './twitter-timeline/twitter-timeline.component';
+import { TweetComponent } from './tweet/tweet.component';
+
 
 const routes: Routes = [
-
 {
   path: 'home',
   component: HomeComponent
@@ -17,15 +18,6 @@ const routes: Routes = [
   component: HomeComponent
 },
 {
-  path: 'twitter_timeline',
-  component: TwitterTimelineComponent
-},
-{
-  path: 'twitter_mentions',
-  component: TwitterMentionsComponent
-},
-{
-
   path: 'login',
   component: LoginComponent
 },
@@ -33,12 +25,18 @@ const routes: Routes = [
   path: 'register',
   component: RegisterComponent
 },
-{ path: '',
-  redirectTo: '',
-  pathMatch: 'full'
-}
-
-
+{
+  path: 'tweet',
+  component: TweetComponent
+},
+{
+  path: 'dashboard',
+  component: DashboardComponent
+},
+{
+  path: 'account',
+  component: AccountComponent
+},
 ];
 
 @NgModule({
