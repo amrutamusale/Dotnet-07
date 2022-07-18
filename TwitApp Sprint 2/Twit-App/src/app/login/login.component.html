@@ -1,3 +1,18 @@
+<head>
+    <script>
+        function verifyPassword(){
+            var pw=document.getElementById("pswd").value;
+            //check empty pssword field
+            if(floatingPassword==""){
+                document.getElementById("message").innerHTML= "**Fill the password please!";
+                return false;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
 <div class="py-5">
     <div class="row">
         <div class="col-md-6 mx-auto">
@@ -26,3 +41,4 @@
         </div>
     </div>
 </div>
+</body>

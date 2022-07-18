@@ -1,254 +1,305 @@
 <html>
-	<head>
-		<title>Tweet App</title>
-		<link rel="stylesheet" type="text/css" href="home.component.css">
-	</head>
-	<body>
-		<div class="layout">
-			<div class="layout__left-sidebar">
-        
-        <div class="sidebar-menu">
-          <img src="./assets/twitter.svg" class="brand">
-          <div class="sidebar-menu__item--active">
-            <img src="./assets/home.svg" class="sidebar-menu__item-icon" />
-            Home
-          </div>
-          <div class="sidebar-menu__item">
+
+<head>
+  <title>Tweet App</title>
+  <link rel="stylesheet" type="text/css" href="home.component.css">
+</head>
+
+<body>
+  <div class="layout">
+    <div class="layout__left-sidebar">
+
+      <div class="sidebar-menu">
+        <img src="./assets/t.logo.png" class="brand" style="width: 100px; height:100px;">
+        <div class="sidebar-menu__item--active">
+          <img src="./assets/home.svg" class="sidebar-menu__item-icon" />
+          Home
+        </div>
+        <!--<div class="sidebar-menu__item">
             <img src="./assets/explore.svg" class="sidebar-menu__item-icon" />
             Explore
           </div>
           <div class="sidebar-menu__item">
             <img src="./assets/notifications.svg" class="sidebar-menu__item-icon" />
             Notifications
-          </div>
-          <div class="sidebar-menu__item">
-            <img src="./assets/messages.svg" class="sidebar-menu__item-icon" />
-            <a href="tweet">Messages</a>
-          </div>
-          <div class="sidebar-menu__item">
-            <img src="./assets/bookmark.svg" class="sidebar-menu__item-icon" />
-            Bookmarks
-          </div>
-          <div class="sidebar-menu__item">
-            <img src="./assets/lists.svg" class="sidebar-menu__item-icon" />
-            <a href="dashboard">Lists</a>
-          </div>
-          <div class="sidebar-menu__item">
-            <img src="./assets/profile.svg" class="sidebar-menu__item-icon" />
-            <a href="account">Profile</a>
-          </div>
-          <div class="sidebar-menu__item">
-            <img src="./assets/more.svg" class="sidebar-menu__item-icon" />
-            More
-          </div>
-          <div class="tweet__btn">
-            <button routerLink="/tweet" class="btn btn-lg btn-primary" type="submit">Tweet</button> 
-          </div>
-          <br />
-          <br />
-          <br />
-          <div class="footer">
-            <tbody>
-              <img src="./assets/profile.svg">
-              <tr *ngFor="let user of users;">
-                  <td>{{user.firstName}}</td>
-                  <td>{{user.lastName}}</td>
-                  <td>{{user.email}}</td>
-               </tr>
+          </div> -->
+        <div class="sidebar-menu__item">
+          <img src="./assets/messages.svg" class="sidebar-menu__item-icon" />
+          <a href="tweet">Messages</a>
+        </div>
+        <div class="sidebar-menu__item">
+          <img src="./assets/bookmark.svg" class="sidebar-menu__item-icon" />
+          Bookmarks
+        </div>
+        <div class="sidebar-menu__item">
+          <img src="./assets/lists.svg" class="sidebar-menu__item-icon" />
+          <a href="dashboard">Lists</a>
+        </div>
+        <div class="sidebar-menu__item">
+          <img src="./assets/profile.svg" class="sidebar-menu__item-icon" />
+          <a href="account">Profile</a>
+        </div>
+        <div class="sidebar-menu__item">
+          <img src="./assets/more.svg" class="sidebar-menu__item-icon" />
+          More
+        </div>
+        <div class="tweet__btn">
+          <button routerLink="/tweet" class="btn btn-lg btn-primary" type="submit">Tweet</button>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="footer">
+          <tbody>
+            <img src="./assets/profile.svg">
+            <tr *ngFor="let user of users;">
+              <td>{{user.firstName}}</td>
+              <td>{{user.lastName}}</td>
+              <td>{{user.email}}</td>
+            </tr>
           </tbody>
+        </div>
+      </div>
+    </div>
+    <div class="layout__main">
+      <div class="tweet">
+        <img class="tweet__author-logo" src="./assets/PM.jpg" />
+        <div class="tweet__main">
+          <div class="tweet__header">
+            <div class="tweet__author-name">
+              Narendra Modi
+            </div>
+            <div class="tweet__author-slug">
+              @narendramodi
+            </div>
+            <div class="tweet__publish-time">
+              38m ago
+            </div>
+          </div>
+          <div class="tweet__content">
+            Birthday wishes to Mizoram CM Shri Zoramthanga Ji.<br /> I pray for his long and healthy life.
+            @ZoramthangaCM
+          </div>
+          <div>
+            <p (click)="plus()"
+              style="margin-right:10px; width: 30px; color: red; height:20px; font-size: 40px; cursor: pointer; float: left;">
+              &hearts;</p>
+            <i class="badge bg-danger" style="float: left; margin-top: 22px; margin-left:0px;">{{quantity}}</i>
+            <i class="fa fa-share" routerLink="sharetweet"
+              style="float: left; margin-top: 22px; margin-left:30px; width: 25px; font-size: 25px; height:30px; cursor: pointer;"></i>
+          </div>
+
+        </div>
+      </div>
+      <div class="tweet">
+        <img class="tweet__author-logo" src="./assets/jyamyang.jpg" />
+        <div class="tweet__main">
+          <div class="tweet__header">
+            <div class="tweet__author-name">
+              Jamyang Tsering Namgyal
+            </div>
+            <div class="tweet__author-slug">
+              @jtnladakh
+            </div>
+            <div class="tweet__publish-time">
+              1h ago
+            </div>
+          </div>
+          <div class="tweet__content">
+            New India 🇮🇳 <br />
+            @Narendramodi <br />
+            @BJP4INDIA
+            <img class="tweet__img" src="./assets/img.jfif">
+          </div>
+          <div>
+            <p (click)="plus()"
+              style="margin-right:10px; width: 30px; color: red; height:20px; font-size: 40px; cursor: pointer; float: left;">
+              &hearts;</p>
+            <i class="badge bg-danger" style="float: left; margin-top: 22px; margin-left:0px;">{{quantity}}</i>
+            <i class="fa fa-share" routerLink="/sharetweet"
+              style="float: left; margin-top: 22px; margin-left:30px; width: 25px; font-size: 25px; height:30px; cursor: pointer;"></i>
           </div>
         </div>
-			</div>
-			<div class="layout__main">
-        <div class="tweet">
-          <img class="tweet__author-logo" src="./assets/PM.jpg" />
-          <div class="tweet__main">
-            <div class="tweet__header">
-              <div class="tweet__author-name">
-                Narendra Modi
-              </div>
-              <div class="tweet__author-slug">
-                @narendramodi
-              </div>
-              <div class="tweet__publish-time">
-                38m ago
-              </div>
+      </div>
+      <div class="tweet">
+        <img class="tweet__author-logo" src="./assets/nasa-logo.jpg" />
+        <div class="tweet__main">
+          <div class="tweet__header">
+            <div class="tweet__author-name">
+              NASA Webb telescope
             </div>
-            <div class="tweet__content">
-              Birthday wishes to Mizoram CM Shri Zoramthanga Ji.<br /> I pray for his long and healthy life. 
-               @ZoramthangaCM
+            <div class="tweet__author-slug">
+              @NASAWebb
             </div>
+            <div class="tweet__publish-time">
+              15h ago
+            </div>
+          </div>
+          <div class="tweet__content">
+            Hey
+            @NASASolarSystem
+            , ready for your close-up? As part of Webb’s prep for science, we tested how the telescope tracks solar
+            system
+            objects like Jupiter. Webb worked better than expected, and even caught Jupiter’s moon Europa:
+            https://blogs.nasa.gov/webb/2022/07/14/webb-images-of-jupiter-and-more-now-available-in-commissioning-data
+            <img class="tweet__img" src="./assets/nasa.jfif">
+          </div>
+          <div>
+            <p (click)="plus()"
+              style="margin-right:10px; width: 30px; color: red; height:20px; font-size: 40px; cursor: pointer; float: left;">
+              &hearts;</p>
+            <i class="badge bg-danger" style="float: left; margin-top: 22px; margin-left:0px;">{{quantity}}</i>
+            <i class="fa fa-share" routerLink="/sharetweet"
+              style="float: left; margin-top: 22px; margin-left:30px; width: 25px; font-size: 25px; height:30px; cursor: pointer;"></i>
           </div>
         </div>
-        <div class="tweet">
-          <img class="tweet__author-logo" src="./assets/jyamyang.jpg" />
-          <div class="tweet__main">
-            <div class="tweet__header">
-              <div class="tweet__author-name">
-                Jamyang Tsering Namgyal
-              </div>
-              <div class="tweet__author-slug">
-                @jtnladakh
-              </div>
-              <div class="tweet__publish-time">
-                1h ago
-              </div>
+      </div>
+
+      <div class="tweet">
+        <img class="tweet__author-logo" src="./assets/PM.jpg" />
+        <div class="tweet__main">
+          <div class="tweet__header">
+            <div class="tweet__author-name">
+              Narendra Modi
             </div>
-            <div class="tweet__content">
-              New India 🇮🇳 <br />
-               @Narendramodi <br />
-               @BJP4INDIA
-              <img class="tweet__img" src="./assets/img.jfif">
+            <div class="tweet__author-slug">
+              @narendramodi
             </div>
+            <div class="tweet__publish-time">
+              38m ago
+            </div>
+          </div>
+          <div class="tweet__content">
+            Birthday wishes to Mizoram CM Shri Zoramthanga Ji.<br /> I pray for his long and healthy life.
+            @ZoramthangaCM
+          </div>
+          <div>
+            <p (click)="plus()"
+              style="margin-right:10px; width: 30px; color: red; height:20px; font-size: 40px; cursor: pointer; float: left;">
+              &hearts;</p>
+            <i class="badge bg-danger" style="float: left; margin-top: 22px; margin-left:0px;">{{quantity}}</i>
+            <i class="fa fa-share" routerLink="/sharetweet"
+              style="float: left; margin-top: 22px; margin-left:30px; width: 25px; font-size: 25px; height:30px; cursor: pointer;"></i>
           </div>
         </div>
-        <div class="tweet">
-          <img class="tweet__author-logo" src="./assets/nasa-logo.jpg" />
-          <div class="tweet__main">
-            <div class="tweet__header">
-              <div class="tweet__author-name">
-                NASA Webb telescope
-              </div>
-              <div class="tweet__author-slug">
-                @NASAWebb
-              </div>
-              <div class="tweet__publish-time">
-                15h ago
-              </div>
+      </div>
+      <div class="tweet">
+        <img class="tweet__author-logo" src="./assets/PM.jpg" />
+        <div class="tweet__main">
+          <div class="tweet__header">
+            <div class="tweet__author-name">
+              Narendra Modi
             </div>
-            <div class="tweet__content">
-              Hey 
-              @NASASolarSystem
-              , ready for your close-up? As part of Webb’s prep for science, we tested how the telescope tracks solar system 
-              objects like Jupiter. Webb worked better than expected, and even caught Jupiter’s moon Europa: https://blogs.nasa.gov/webb/2022/07/14/webb-images-of-jupiter-and-more-now-available-in-commissioning-data
-               <img class="tweet__img" src="./assets/nasa.jfif">
+            <div class="tweet__author-slug">
+              @narendramodi
             </div>
+            <div class="tweet__publish-time">
+              38m ago
+            </div>
+          </div>
+          <div class="tweet__content">
+            Birthday wishes to Mizoram CM Shri Zoramthanga Ji.<br /> I pray for his long and healthy life.
+            @ZoramthangaCM
+          </div>
+          <div>
+            <p (click)="plus()"
+              style="margin-right:10px; width: 30px; color: red; height:20px; font-size: 40px; cursor: pointer; float: left;">
+              &hearts;</p>
+            <i class="badge bg-danger" style="float: left; margin-top: 22px; margin-left:0px;">{{quantity}}</i>
+            <i class="fa fa-share" routerLink="/sharetweet"
+              style="float: left; margin-top: 22px; margin-left:30px; width: 25px; font-size: 25px; height:30px; cursor: pointer;"></i>
           </div>
         </div>
-        
-        <div class="tweet">
-          <img class="tweet__author-logo" src="./assets/Suresh.jpg" />
-          <div class="tweet__main">
-            <div class="tweet__header">
-              <div class="tweet__author-name">
-                Suresh Raina
-              </div>
-              <div class="tweet__author-slug">
-                @sureshraina
-              </div>
-              <div class="tweet__publish-time">
-                10m ago
-              </div>
+      </div>
+    </div>
+    <div class="layout__right-sidebar-container">
+
+      <div class="layout__right-sidebar">
+        <div class="form-group">
+          <input type="text" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search users by there Name">
+        </div>
+        <span class="fas fa-search search-icon"
+          style="position: absolute; z-index: 15; left:85%; top:30px; color:blue"></span>
+        <div class="trends-for-you">
+          <div class="trends-for-you__block">
+            <div class="trends-for-you__heading">
+              Trendes for you
             </div>
-            <div class="tweet__content">
-              Cricket my world.<br/> Love to Cricket
+          </div>
+          <div class="trends-for-you__block">
+            <div class="trends-for-you__meta-information">
+              Trending in India
             </div>
+            <div class="trends-for-you__trend-name">
+              #iPhone12
+            </div>
+            <div class="trends-for-you__meta-information">
+              155k Tweets
+            </div>
+          </div>
+          <div class="trends-for-you__block">
+            <div class="trends-for-you__meta-information">
+              Trending in India
+            </div>
+            <div class="trends-for-you__trend-name">
+              #iPhone12
+            </div>
+            <div class="trends-for-you__meta-information">
+              155k Tweets
+            </div>
+          </div>
+          <div class="trends-for-you__block">
+            <div class="trends-for-you__meta-information">
+              Trending in India
+            </div>
+            <div class="trends-for-you__trend-name">
+              #iPhone12
+            </div>
+            <div class="trends-for-you__meta-information">
+              155k Tweets
+            </div>
+          </div>
+          <div class="trends-for-you__block">
+            <div class="trends-for-you__meta-information">
+              Trending in India
+            </div>
+            <div class="trends-for-you__trend-name">
+              #iPhone12
+            </div>
+            <div class="trends-for-you__meta-information">
+              155k Tweets
+            </div>
+          </div>
+          <div class="trends-for-you__block">
+            <div class="trends-for-you__meta-information">
+              Trending in India
+            </div>
+            <div class="trends-for-you__trend-name">
+              #Amazon
+            </div>
+            <div class="trends-for-you__meta-information">
+              200k Tweets
+            </div>
+          </div>
+          <div class="trends-for-you__block">
+            <div class="trends-for-you__meta-information">
+              Trending in India
+            </div>
+            <div class="trends-for-you__trend-name">
+              #iPhone12
+            </div>
+            <div class="trends-for-you__meta-information">
+              155k Tweets
+            </div>
+
           </div>
         </div>
-        <div class="tweet">
-          <img class="tweet__author-logo" src="./assets/virat.png" />
-          <div class="tweet__main">
-            <div class="tweet__header">
-              <div class="tweet__author-name">
-                Virat Kohli
-              </div>
-              <div class="tweet__author-slug">
-                @viratkohli
-              </div>
-              <div class="tweet__publish-time">
-                1hr ago
-              </div>
-            </div>
-            <div class="tweet__content">
-              King of Cricket<br /> Thanks for eveything you have done for Indian Cricket.
-            </div>
-          </div>
-        </div>
-			</div>
-			<div class="layout__right-sidebar-container">
-        
-        <div class="layout__right-sidebar">
-          <div class="form-group">
-            <input type="text" placeholder="search users by there Name">
-          </div>
-          <span class="fas fa-search search-icon" style="position: absolute; z-index: 15; left:85%; top:30px; color:blue"></span>
-          <div class="trends-for-you">
-            <div class="trends-for-you__block">
-              <div class="trends-for-you__heading">
-                <h5>Trendes for you</h5>
-              </div>
-            </div>
-            <div class="trends-for-you__block">
-              <div class="trends-for-you__meta-information">
-                Trending in India
-              </div>
-              <div class="trends-for-you__trend-name">
-                <h5>#iPhone12</h5>
-              </div>
-              <div class="trends-for-you__meta-information">
-                155k Tweets
-              </div>
-            </div>
-            <div class="trends-for-you__block">
-              <div class="trends-for-you__meta-information">
-                Trending in India
-              </div>
-              <div class="trends-for-you__trend-name">
-                <h5>#iPhone12</h5>
-              </div>
-              <div class="trends-for-you__meta-information">
-                155k Tweets
-              </div>
-            </div>
-            <div class="trends-for-you__block">
-              <div class="trends-for-you__meta-information">
-                Trending in India
-              </div>
-              <div class="trends-for-you__trend-name">
-             <h5> #iPhone12</h5>
-              </div>
-              <div class="trends-for-you__meta-information">
-                155k Tweets
-              </div>
-            </div>
-            <div class="trends-for-you__block">
-              <div class="trends-for-you__meta-information">
-                Trending in India
-              </div>
-              <div class="trends-for-you__trend-name">
-                <h5>#iPhone12</h5>
-              </div>
-              <div class="trends-for-you__meta-information">
-                155k Tweets
-              </div>
-            </div>
-            <div class="trends-for-you__block">
-              <div class="trends-for-you__meta-information">
-                Trending in India
-              </div>
-              <div class="trends-for-you__trend-name">
-                <h5>#Amazon</h5>
-              </div>
-              <div class="trends-for-you__meta-information">
-                200k Tweets
-              </div>
-            </div>
-            <div class="trends-for-you__block">
-              <div class="trends-for-you__meta-information">
-                Trending in India
-              </div>
-              <div class="trends-for-you__trend-name">
-                <h5>#iPhone12</h5>
-              </div>
-              <div class="trends-for-you__meta-information">
-                155k Tweets
-              </div>
-              
-            </div>
-          </div>
-        </div>
-			
-			</div>
-		</div>
-	</body>
+      </div>
+
+    </div>
+  </div>
+</body>
+
 </html>

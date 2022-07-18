@@ -18,12 +18,13 @@ namespace TwitAppApi.Models
         }
 
         public virtual DbSet<TblLogin> TblLogins { get; set; }
+        public virtual DbSet<TblTweet> TblTweets { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Data Source=Amruta;Initial Catalog=TwitappDb;Integrated Security=True");
             }
         }
@@ -51,6 +52,25 @@ namespace TwitAppApi.Models
                     .HasMaxLength(100);
 
                 entity.Property(e => e.Password).HasMaxLength(100);
+            });
+
+            modelBuilder.Entity<TblTweet>(entity =>
+            {
+                entity.ToTable("TblTweet");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.AuthorLogo).HasMaxLength(100);
+
+                entity.Property(e => e.AuthorName).HasMaxLength(100);
+
+                entity.Property(e => e.AuthorSlug).HasMaxLength(100);
+
+                entity.Property(e => e.TweetDescription).HasMaxLength(100);
+
+                entity.Property(e => e.TweetImage).HasMaxLength(100);
+
+                entity.Property(e => e.TweetTime).HasMaxLength(100);
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -1,9 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, InputDecorator } from '@angular/core';
 import { AuthService } from './services/auth.service';
-import { HttpClient } from '@angular/common/http';
-import { HttpClientModule } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -29,9 +25,12 @@ export class AppComponent {
   }
   LogOut(){
     this._auth.logoutUser();
-  
-  
    }
+  }
+
+
+  function IsAdmin(Input: InputDecorator, boolean: any) {
+    throw new Error('Function not implemented.');
   }
 
 
