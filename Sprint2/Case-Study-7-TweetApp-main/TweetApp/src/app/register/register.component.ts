@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
   }
   registerUser() {
 
-    if(this.registerUserData.email==''|| this.registerUserData.password==''|| this.registerUserData.firstName==''||this.registerUserData.lastName==''||this.registerUserData.loginId==''||this.registerUserData.confirmPassword==''||this.registerUserData.contactNumber==0){
+    if(this.registerUserData.email==''|| this.registerUserData.password==''){
       this.DisplayModalPopup("Error","Please enter the username and password");
       return;
     }

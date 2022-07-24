@@ -39,8 +39,6 @@ namespace TwitAppApi.Models
 
                 entity.Property(e => e.ConfirmPassword).HasMaxLength(100);
 
-                entity.Property(e => e.ContactNumber).HasColumnType("numeric(10, 0)");
-
                 entity.Property(e => e.Email).HasMaxLength(100);
 
                 entity.Property(e => e.FirstName).HasMaxLength(100);

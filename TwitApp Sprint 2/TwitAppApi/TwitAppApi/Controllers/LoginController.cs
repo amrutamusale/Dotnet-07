@@ -58,7 +58,7 @@ namespace TwitAppApi.Controllers
             login.LoginId = registerViewModel.LoginId;
             login.Password = registerViewModel.Password;
             login.ConfirmPassword = registerViewModel.ConfirmPassword;
-            login.ContactNumber = registerViewModel.ContactNumber;
+            login.ContactNumber =  registerViewModel.ContactNumber;
             var token = iJWTMangerRepository.Authenicate(login, true);
             if (token == null)
             {

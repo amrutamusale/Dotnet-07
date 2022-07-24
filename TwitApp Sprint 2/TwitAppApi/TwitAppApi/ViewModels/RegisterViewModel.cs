@@ -14,6 +14,6 @@ namespace TwitAppApi.ViewModels
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
 
-        public decimal ContactNumber { get; set; }
+        public int ContactNumber { get; set; }
     }
 }
