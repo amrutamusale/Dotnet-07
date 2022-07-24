@@ -31,20 +31,26 @@ export class RegisterComponent implements OnInit {
   }
   registerUser() {
 
-    if(this.registerUserData.loginId==''|| this.registerUserData.password==''){
+    if(this.registerUserData.email==''|| this.registerUserData.password==''|| this.registerUserData.firstName==''||this.registerUserData.lastName==''||this.registerUserData.loginId==''||this.registerUserData.confirmPassword==''||this.registerUserData.contactNumber==0){
       this.DisplayModalPopup("Error","Please enter the username and password");
       return;
     }
     this.ShowSpinner();
     var userDataObject={
-      userName:this.registerUserData.loginId,
-      password:this.registerUserData.password
+      firstName:this.registerUserData.firstName,
+      lastName:this.registerUserData.lastName,
+      email:this.registerUserData.email,
+      loginId:this.registerUserData.loginId,
+      password:this.registerUserData.password,
+      confirmPassword:this.registerUserData.confirmPassword,
+      contactNumber:this.registerUserData.contactNumber
     }
     this._auth.registerUser(userDataObject).subscribe(res => {
      this.HideSpinner();localStorage.setItem('token',res.token);
       this._router.navigate(['tweet'])
     },
-      err => console.log(err));
+    err=>{this.HideSpinner();console.log(err)});
+  }
+      
   }
 
-}
