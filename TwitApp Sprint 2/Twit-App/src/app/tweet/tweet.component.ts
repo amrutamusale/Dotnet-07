@@ -10,16 +10,18 @@ import { TweetService } from '../services/tweet.service';
   styleUrls: ['./tweet.component.css']
 })
 export class TweetComponent implements OnInit {
-
+ 
   constructor(public httpc:HttpClient, private _tweetservice:TweetService, private _router:Router) { }
-
+  isEdit=false;
   ngOnInit(): void {
   }
   user: Tweet=new Tweet();
   users:Array<Tweet>=new Array<Tweet>();
+  
 
   AddTweet()
   {
+    //console.log(this.CustomerModel);
     console.log(this.user)
     var admindto={
       id:Number(this.user.id),
@@ -31,7 +33,13 @@ export class TweetComponent implements OnInit {
       tweetDescription:this.user.tweetDescription,
 
     }
-    this.httpc.post("https://localhost:44308/api/Tweet",admindto).subscribe(res=>this.PostSuccess(res),res=>this.PostError(res));
+    if(this.isEdit){
+      this.httpc.put("https://localhost:44308/api/Tweet",admindto).subscribe(res=>this.PostSuccess(res),res=>this.PostError(res));
+    }
+    else{
+      this.httpc.post("https://localhost:44308/api/Tweet",admindto).subscribe(res=>this.PostSuccess(res),res=>this.PostError(res));
+    }
+    
     this.user=new Tweet();
   }
   PostSuccess(res:any){
@@ -42,7 +50,7 @@ export class TweetComponent implements OnInit {
     console.log(res);
   }
 
-  Show(){
+  getData(){
     console.log("Hi");
     this.httpc.get("https://localhost:44308/api/Tweet").subscribe(res=>this.GetSuccess(res),res=>this.GetError(res));
   }
@@ -52,5 +60,17 @@ export class TweetComponent implements OnInit {
   GetError(input:any){
     console.log(input);
   }
+  EditTweet(input: Tweet) {
+    this.user = input;
+  }
+  DeleteTweet(input: Tweet) {
+    var index=this.users.indexOf(input);
+    this.users.splice(index,1);
+  }
+  /*UpdateTweet(){
+    console.log(this.EditTweet);
+    this.user.updateTweet(this.EditTweet)
+  }*/
+  
 
 }

@@ -5,7 +5,7 @@ import { AccountService } from '../services/account.service';
 import { AuthService } from '../services/auth.service';
 
 @Component({
-  selector: 'app-account',
+  selector: 'app-home',
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.css']
 })

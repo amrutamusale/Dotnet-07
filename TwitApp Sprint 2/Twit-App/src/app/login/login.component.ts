@@ -20,9 +20,9 @@ export class LoginComponent implements OnInit {
     this._auth.loginUser(this.loginUserData).subscribe(res => {
       localStorage.setItem('token', res.token);
       if (res.isAdmin)
-        this._router.navigate(['/dashboard']);
+        this._router.navigate(['/home']);
       else
-        this._router.navigate(['/account']);
+        this._router.navigate(['/home']);
     }, err => console.log(err));
   }
 

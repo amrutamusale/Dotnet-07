@@ -16,12 +16,14 @@ namespace TwitAppApi.ViewModels
     public class JWTManagerRepository: IJWTManagerRepository
     {
         Dictionary<string, string> UserRecords;
+        private bool _isAdmin;
         private readonly IConfiguration configuration;
-        private readonly TwitappDbContext db;
+        private readonly TweetDBContext db;
+       
 
         public bool IsRegister { get; private set; }
 
-        public JWTManagerRepository(IConfiguration _configuration, TwitappDbContext _db)
+        public JWTManagerRepository(IConfiguration _configuration, TweetDBContext _db)
         {
             db = _db;
             configuration = _configuration;
@@ -30,6 +32,10 @@ namespace TwitAppApi.ViewModels
         {
             if (IsRegister)
             {
+                if (db.TblLogins.Any(x => x.Email == registerViewModel.Email))
+                {
+                    return null;
+                }
                 TblLogin tblLogin = new TblLogin();
                 tblLogin.FirstName = registerViewModel.FirstName;
                 tblLogin.LastName = registerViewModel.LastName;
@@ -41,6 +47,12 @@ namespace TwitAppApi.ViewModels
                 db.TblLogins.Add(tblLogin);
                 db.SaveChanges();
             }
+        
+            else
+            {
+                _isAdmin = db.TblLogins.Any(x => x.Email == registerViewModel.Email && x.Password == registerViewModel.Password);
+            }
+
 
             UserRecords = db.TblLogins.ToList().ToDictionary(x => x.Email, x => x.Password);
             if (!UserRecords.Any(x => x.Key == registerViewModel.Email && x.Value == registerViewModel.Password))

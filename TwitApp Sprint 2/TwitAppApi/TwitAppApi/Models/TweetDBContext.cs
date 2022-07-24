@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace TwitAppApi.Models
 {
-    public partial class TwitappDbContext : DbContext
+    public partial class TweetDBContext : DbContext
     {
-        public TwitappDbContext()
+        public TweetDBContext()
         {
         }
 
-        public TwitappDbContext(DbContextOptions<TwitappDbContext> options)
+        public TweetDBContext(DbContextOptions<TweetDBContext> options)
             : base(options)
         {
         }
@@ -24,8 +24,8 @@ namespace TwitAppApi.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=Amruta;Initial Catalog=TwitappDb;Integrated Security=True");
+
+                optionsBuilder.UseSqlServer("Data Source=Amruta;Initial Catalog=TweetDB;Integrated Security=True");
             }
         }
 
@@ -47,9 +47,7 @@ namespace TwitAppApi.Models
 
                 entity.Property(e => e.LastName).HasMaxLength(100);
 
-                entity.Property(e => e.LoginId)
-                    .IsRequired()
-                    .HasMaxLength(100);
+                entity.Property(e => e.LoginId).HasMaxLength(100);
 
                 entity.Property(e => e.Password).HasMaxLength(100);
             });
@@ -58,15 +56,13 @@ namespace TwitAppApi.Models
             {
                 entity.ToTable("TblTweet");
 
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.AuthorEmail).HasMaxLength(100);
 
                 entity.Property(e => e.AuthorLogo).HasMaxLength(100);
 
-                entity.Property(e => e.AuthorName).HasMaxLength(100);
-
                 entity.Property(e => e.AuthorSlug).HasMaxLength(100);
 
-                entity.Property(e => e.TweetDescription).HasMaxLength(100);
+                entity.Property(e => e.TweetDescription).HasMaxLength(1000);
 
                 entity.Property(e => e.TweetImage).HasMaxLength(100);
 

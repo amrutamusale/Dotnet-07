@@ -8,7 +8,7 @@ namespace TwitAppApi.Models
     public partial class TblTweet
     {
         public int Id { get; set; }
-        public string AuthorName { get; set; }
+        public string AuthorEmail { get; set; }
         public string AuthorLogo { get; set; }
         public string AuthorSlug { get; set; }
         public string TweetTime { get; set; }

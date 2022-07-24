@@ -1,0 +1,48 @@
+<head>
+    <script>
+        function verifyPassword(){
+            var pw=document.getElementById("pswd").value;
+            //check empty pssword field
+            if(floatingPassword==""){
+                document.getElementById("message").innerHTML= "**Fill the password please!";
+                return false;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+<div class="py-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card rounded-0">
+                <div class="Card-header">
+                    <h3 class="mb-0">Login</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form" action="" [formGroup]="loginUserData.formLoginGroup">
+                        <div class="col-md-12">
+                            <label class="form-label" for="floatingInput">UserName</label>
+                            <input type="email" class="form-control"  [(ngModel)]="loginUserData.email" formControlName="UserNameControl" id="floatingInput" placeholder="abc@gmail.com">
+                            <p style="color: red;" [hidden]="!(hasError('required','UserNameControl'))">UserName is required</p>
+                            
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label" for="floatingPassword">Password</label>
+                            <input type="password" class="form-control" id="pswd" [(ngModel)]="loginUserData.password" formControlName="PasswordControl" placeholder="123@Pt">
+                            <p style="color: red;" [hidden]="!(hasError('required','PasswordControl'))">Password is required</p>
+                           
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check"></div>
+                            </div>
+                        <button class="btn btn-lg btn-primary" (click)="LoginUser()" [disabled]="!(loginUserData.formLoginGroup.valid)" type="submit">Sign in</button>
+                        <button routerLink="/register" class="btn btn-lg btn-primary" type="submit" style="margin-left: 20px;">New User</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

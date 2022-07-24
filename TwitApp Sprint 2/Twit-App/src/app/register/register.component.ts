@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
   registerUser() {
     this._auth.registerUser(this.registerUserData).subscribe(res => {
       localStorage.setItem('token',res.token);
-      this._router.navigate(['/login'])
+      this._router.navigate(['login'])
     },
       err => console.log(err));
   }

@@ -14,12 +14,16 @@ namespace TwitAppApi.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        TwitappDbContext db;
+        TweetDBContext db;
         IJWTManagerRepository iJWTMangerRepository;
-        public LoginController(TwitappDbContext _db, IJWTManagerRepository _iJWTManagerRepository)
+
+        //public object WebSecurity { get; private set; }
+        //public object EmailManager { get; private set; }
+
+        public LoginController(TweetDBContext _db, IJWTManagerRepository _iJWTMangerRepository)
         {
             db = _db;
-            iJWTMangerRepository = _iJWTManagerRepository;
+            iJWTMangerRepository = _iJWTMangerRepository;
         }
 
         [HttpGet]
@@ -42,6 +46,7 @@ namespace TwitAppApi.Controllers
             return Ok(token);
         }
 
+
         [HttpPost]
         [Route("register")]
         public IActionResult Register(RegisterViewModel registerViewModel)
@@ -61,5 +66,21 @@ namespace TwitAppApi.Controllers
             }
             return Ok(token);
         }
+
+        /*[HttpGet("forgot-password")]
+          public ActionResult ForgotPassword()
+          {
+              return View();
+          }
+         [HttpPost("forgot-password")]
+          public ActionResult ForgotPassword(ForgotPasswordModel model)
+          {
+              return View();
+          }
+              if (ModelState.IsValid)
+              {
+
+              return View();
+          }*/
     }
 }

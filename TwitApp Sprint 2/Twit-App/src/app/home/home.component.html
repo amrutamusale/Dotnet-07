@@ -27,10 +27,10 @@
           <img src="./assets/messages.svg" class="sidebar-menu__item-icon" />
           <a href="tweet">Messages</a>
         </div>
-        <div class="sidebar-menu__item">
+        <!--<div class="sidebar-menu__item">
           <img src="./assets/bookmark.svg" class="sidebar-menu__item-icon" />
           Bookmarks
-        </div>
+        </div> -->
         <div class="sidebar-menu__item">
           <img src="./assets/lists.svg" class="sidebar-menu__item-icon" />
           <a href="dashboard">Lists</a>
@@ -39,13 +39,15 @@
           <img src="./assets/profile.svg" class="sidebar-menu__item-icon" />
           <a href="account">Profile</a>
         </div>
-        <div class="sidebar-menu__item">
+        <!-- <div class="sidebar-menu__item">
           <img src="./assets/more.svg" class="sidebar-menu__item-icon" />
           More
-        </div>
+        </div>-->
         <div class="tweet__btn">
           <button routerLink="/tweet" class="btn btn-lg btn-primary" type="submit">Tweet</button>
         </div>
+        <br />
+        <br />
         <br />
         <br />
         <br />
@@ -56,31 +58,33 @@
             <img src="./assets/profile.svg">
             <tr *ngFor="let user of users;">
               <td>{{user.firstName}}</td>
-              <td>{{user.lastName}}</td>
+              <!--<td>{{user.lastName}}</td>-->
               <td>{{user.email}}</td>
             </tr>
           </tbody>
         </div>
       </div>
     </div>
+    <div class="container">
+      <div *ngFor="let tweet of tweets" >
     <div class="layout__main">
       <div class="tweet">
-        <img class="tweet__author-logo" src="./assets/PM.jpg" />
+        <img class="tweet__author-logo" src="./assets/{{tweet.authorLogo}}" />
         <div class="tweet__main">
           <div class="tweet__header">
             <div class="tweet__author-name">
-              Narendra Modi
+              {{tweet.authorName}}
             </div>
             <div class="tweet__author-slug">
-              @narendramodi
+              {{tweet.authorSlug}}
             </div>
             <div class="tweet__publish-time">
-              38m ago
+              {{tweet.tweetTime}}
             </div>
           </div>
           <div class="tweet__content">
-            Birthday wishes to Mizoram CM Shri Zoramthanga Ji.<br /> I pray for his long and healthy life.
-            @ZoramthangaCM
+            {{tweet.tweetDescription}}
+            <img class="tweet__img" src="./assets/{{tweet.tweetImage}}">
           </div>
           <div>
             <p (click)="plus()"
@@ -90,10 +94,9 @@
             <i class="fa fa-share" routerLink="sharetweet"
               style="float: left; margin-top: 22px; margin-left:30px; width: 25px; font-size: 25px; height:30px; cursor: pointer;"></i>
           </div>
-
         </div>
       </div>
-      <div class="tweet">
+      <!--<div class="tweet">
         <img class="tweet__author-logo" src="./assets/jyamyang.jpg" />
         <div class="tweet__main">
           <div class="tweet__header">
@@ -156,7 +159,6 @@
           </div>
         </div>
       </div>
-
       <div class="tweet">
         <img class="tweet__author-logo" src="./assets/PM.jpg" />
         <div class="tweet__main">
@@ -172,8 +174,15 @@
             </div>
           </div>
           <div class="tweet__content">
-            Birthday wishes to Mizoram CM Shri Zoramthanga Ji.<br /> I pray for his long and healthy life.
-            @ZoramthangaCM
+                  Watch: बेरोजगारों को विरोध करने का भी हक नहीं, शांतिपूर्ण प्रदर्शन पर भी सजा क्यों ?  
+                  देखें, 'घंटी बजाओ' @akhileshanandd के साथ
+                  <br />
+                  http://abplive.com/live-tv 
+                  <br />
+                  #GhantiBajaoOnABP #SSCGD2018 #SSCGDProtest #StudentProtest #India
+            <video controls>
+                <source src="https://twitter.com/i/status/1549077280042803200" type="video/mp4">
+          </video>
           </div>
           <div>
             <p (click)="plus()"
@@ -212,8 +221,10 @@
               style="float: left; margin-top: 22px; margin-left:30px; width: 25px; font-size: 25px; height:30px; cursor: pointer;"></i>
           </div>
         </div>
-      </div>
+      </div>-->
     </div>
+  </div>
+</div>
     <div class="layout__right-sidebar-container">
 
       <div class="layout__right-sidebar">

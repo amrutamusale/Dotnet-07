@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserData } from '../models/UserData';
-import { map } from 'rxjs/operators';
+import { map } from 'rxjs';
+
 
 @Injectable()
 export class AuthService {
@@ -28,7 +29,7 @@ export class AuthService {
   }
   logoutUser(){
     localStorage.removeItem('token');
-    this._router.navigate(['/home']);
+    this._router.navigate(['/login']);
   }
   getUser() {
     return this.http.get<any>(this._UserUrl)

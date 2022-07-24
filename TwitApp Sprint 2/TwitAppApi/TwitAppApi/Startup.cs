@@ -34,7 +34,7 @@ namespace TwitAppApi
         {
             services.AddControllers();
             services.AddSwaggerGen();
-            services.AddDbContext<TwitappDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("TwitappDbConnection")));
+            services.AddDbContext<TweetDBContext>(x => x.UseSqlServer(Configuration.GetConnectionString("TweetDbConnection")));
             services.AddTransient<IJWTManagerRepository, JWTManagerRepository>();
 
             services.AddAuthentication(x =>

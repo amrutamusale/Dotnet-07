@@ -16,8 +16,8 @@
 }
 .brand
 {
-    height: 45px;
-    filter: invert(46%) sepia(99%) saturate(1449%) hue-rotate(176deg) brightness(100%) contrast(91%);
+    /*height: 45px;
+    filter: invert(46%) sepia(99%) saturate(1449%) hue-rotate(176deg) brightness(100%) contrast(91%);*/
     padding: 10px;
     margin-left: 60px;
 }

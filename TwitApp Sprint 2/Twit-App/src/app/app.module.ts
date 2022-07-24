@@ -16,6 +16,7 @@ import { SearchComponent } from './search/search.component';
 import { FilterPipe } from './shared/filter.pipe.';
 import { SharetweetComponent } from './sharetweet/sharetweet.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { SharetweetComponent } from './sharetweet/sharetweet.component';
     AccountComponent,
     SearchComponent,
     FilterPipe,
-    SharetweetComponent
+    SharetweetComponent,
+   
   ],
   imports: [
     BrowserModule,
